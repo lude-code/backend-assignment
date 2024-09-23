@@ -1,0 +1,27 @@
+.metadata
+bin/
+tmp/
+target/
+*.tmp
+*.bak
+*.swp
+*.log
+*~.nib
+local.properties
+.settings/
+.loadpath
+.recommenders
+generated/
+# Eclipse
+.settings
+.project
+.classpath
+.target
+.externalToolBuilders/
+*.launch
+# Intellij IDEA
+.idea
+*.iml
+*.ipr
+*.iws
+*.pyc
