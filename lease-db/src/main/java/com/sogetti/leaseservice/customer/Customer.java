@@ -2,7 +2,6 @@ package com.sogetti.leaseservice.customer;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.sogetti.leaseservice.car.Car;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -15,7 +14,7 @@ public class Customer {
 
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
-  @JsonIgnore //Id is not in interest for end user
+  @JsonIgnore // Id is not in interest for end user
   private Long id;
 
   @Column(unique = true)

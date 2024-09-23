@@ -1,7 +1,11 @@
 package com.sogetti.leaseservice;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.sogetti.leaseservice.car.Car;
+import com.sogetti.leaseservice.car.CarRepository;
+import com.sogetti.leaseservice.customer.Customer;
+import com.sogetti.leaseservice.customer.CustomerRepository;
 import java.util.Optional;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
@@ -11,15 +15,7 @@ import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.sogetti.leaseservice.car.Car;
-import com.sogetti.leaseservice.car.CarRepository;
-import com.sogetti.leaseservice.customer.Customer;
-import com.sogetti.leaseservice.customer.CustomerRepository;
-
-/**
- * Class that starts and boots the Spring application 
- */
+/** Class that starts and boots the Spring application */
 @SpringBootApplication
 public class LeaseDbApplication {
 
@@ -38,6 +34,8 @@ public class LeaseDbApplication {
   public CommandLineRunner demo(
       CustomerRepository customerRepository, CarRepository carRepository) {
     return (args) -> {
+    	
+    	//TODO remove this for prod
       // save a few customers
       Car car = new Car("Audi", "a", "5", 4, 128, 30000, 90000);
       car = carRepository.save(new Car("Audi", "a", "5", 4, 128, 30000, 90000));
